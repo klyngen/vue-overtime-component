@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <OvertimeVisualizer :colors="colors"></OvertimeVisualizer>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import Vue from 'vue';
+import OvertimeVisualizer from './components/OvertimeVisualizer.vue';
+import {ColorConfig} from './models/ColorConfig';
 
-export default {
+var colors: ColorConfig[] = [
+  {key: 'billable', name: 'Fakturerbar tid', value: 20, colorValue: '#0F0', priority: 1},
+  {key: 'internal', name: 'Interntid', value: 10, colorValue: '#0FF', priority: 2},
+  {key: 'bench', name: 'Benk', value: 30, colorValue: '#F00', priority: 3}
+];
+
+export default Vue.extend({
   name: 'App',
   components: {
-    HelloWorld
+    OvertimeVisualizer
+  },
+  data() {
+    return {
+      colors: colors
+    }
   }
-}
+});
 </script>
 
 <style>
