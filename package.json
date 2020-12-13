@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "tween": "^0.9.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@tweenjs/tween.js": "^18.6.4",
+    "@types/tweenjs": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -38,7 +41,9 @@
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": 1
+    }
   },
   "browserslist": [
     "> 1%",
